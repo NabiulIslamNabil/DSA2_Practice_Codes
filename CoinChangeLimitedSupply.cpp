@@ -25,7 +25,7 @@ int main(){
             dp[i][j] = dp[i-1][j];
             
             for(int k=1; k<=supply[i-1] && k*coins[i-1]<=j; k++){
-                dp[i][j] = dp[i-1][j]+dp[i][j-k*coins[i-1]];
+                dp[i][j] += dp[i-1][j]+dp[i][j-k*coins[i-1]];
             }
         }
     }
